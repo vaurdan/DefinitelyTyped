@@ -265,12 +265,13 @@ export function toggleSelection(isSelectionEnabled?: boolean): void;
 export function updateBlock(clientId: string, updates: Partial<BlockInstance>): void;
 
 /**
- * Signals that the block attributes with the specified client ID has been updated.
+ * Action that updates attributes of multiple blocks with the specified client IDs.
  *
- * @param clientId - Block client ID.
+ * @param clientIds - Block client ID.
  * @param attributes - Block attributes to be merged.
+ * @param uniqueByBlock - true if each block in clientIds array has a unique set of attribute
  */
-export function updateBlockAttributes(clientId: string, attributes: Record<string, any>): void;
+export function updateBlockAttributes(clientIds: string|string[], attributes: Record<string, any>, uniqueByBlock: boolean): void;
 
 /**
  * Changes the nested settings of a given block.
